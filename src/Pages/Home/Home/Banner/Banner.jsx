@@ -13,7 +13,7 @@ const Banner = () => {
         
       <a href="#slide4" className="btn btn-circle">❮</a> 
       <div>
-        <h1 className='text-6xl font-bold text-white'>Play With You Superhero</h1>
+        <h1 className='text-6xl font-bold text-white'>Play With Your Superhero</h1>
         <p className='text-2xl font-medium text-white'>Time to save the mother earth.</p>
         <button className="btn btn-primary">Shop Now</button>
       </div>
@@ -25,7 +25,7 @@ const Banner = () => {
     <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
       <a href="#slide1" className="btn btn-circle">❮</a> 
       <div>
-        <h1 className='text-6xl font-bold text-white'>Play With You Superhero</h1>
+        <h1 className='text-6xl font-bold text-white'>Play With Your Superhero</h1>
         <p className='text-2xl font-medium text-white'>Time to save the mother earth.</p>
         <button className="btn btn-primary">Shop Now</button>
       </div>
@@ -37,7 +37,7 @@ const Banner = () => {
     <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
       <a href="#slide2" className="btn btn-circle">❮</a> 
       <div>
-        <h1 className='text-6xl font-bold text-white'>Play With You Superhero</h1>
+        <h1 className='text-6xl font-bold text-white'>Play With Your Superhero</h1>
         <p className='text-2xl font-medium text-white'>Time to save the mother earth.</p>
         <button className="btn btn-primary">Shop Now</button>
       </div>
@@ -49,7 +49,7 @@ const Banner = () => {
     <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
       <a href="#slide3" className="btn btn-circle">❮</a> 
       <div>
-        <h1 className='text-6xl font-bold text-white'>Play With You Superhero</h1>
+        <h1 className='text-6xl font-bold text-white'>Play With Your Superhero</h1>
         <p className='text-2xl font-medium text-white'>Time to save the mother earth.</p>
         <button className="btn btn-primary">Shop Now</button>
       </div>
