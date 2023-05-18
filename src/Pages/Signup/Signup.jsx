@@ -70,6 +70,13 @@ const Signup = () => {
                 className="input input-bordered"
               />
             </div>
+            <div className="form-control">
+            <label className="label">
+                <span className="label-text">Image</span>
+              </label>
+              <input type="image" src="" name="image" placeholder="image" alt="" />
+
+            </div>
             <div className="form-control mt-6">
               <input className="btn btn-primary" type="submit" value="Signup" />
             </div>
