@@ -5,11 +5,18 @@ import img4 from '../../../../assets/image/photo-1671668540310-2674006ae184.jpeg
 
 const Banner = () => {
     return (
-        <div className="carousel w-full">
+        <div className="carousel w-full  h-[600px]">
   <div id="slide1" className="carousel-item relative w-full">
     <img src={img1} className="w-full" />
+   
     <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+        
       <a href="#slide4" className="btn btn-circle">❮</a> 
+      <div>
+        <h1 className='text-6xl font-bold text-white'>Play With You Superhero</h1>
+        <p className='text-2xl font-medium text-white'>Time to save the mother earth.</p>
+        <button className="btn btn-primary">Shop Now</button>
+      </div>
       <a href="#slide2" className="btn btn-circle">❯</a>
     </div>
   </div> 
@@ -17,6 +24,11 @@ const Banner = () => {
     <img src={img2} className="w-full" />
     <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
       <a href="#slide1" className="btn btn-circle">❮</a> 
+      <div>
+        <h1 className='text-6xl font-bold text-white'>Play With You Superhero</h1>
+        <p className='text-2xl font-medium text-white'>Time to save the mother earth.</p>
+        <button className="btn btn-primary">Shop Now</button>
+      </div>
       <a href="#slide3" className="btn btn-circle">❯</a>
     </div>
   </div> 
@@ -24,6 +36,11 @@ const Banner = () => {
     <img src={img3} className="w-full" />
     <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
       <a href="#slide2" className="btn btn-circle">❮</a> 
+      <div>
+        <h1 className='text-6xl font-bold text-white'>Play With You Superhero</h1>
+        <p className='text-2xl font-medium text-white'>Time to save the mother earth.</p>
+        <button className="btn btn-primary">Shop Now</button>
+      </div>
       <a href="#slide4" className="btn btn-circle">❯</a>
     </div>
   </div> 
@@ -31,6 +48,11 @@ const Banner = () => {
     <img src={img4} className="w-full" />
     <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
       <a href="#slide3" className="btn btn-circle">❮</a> 
+      <div>
+        <h1 className='text-6xl font-bold text-white'>Play With You Superhero</h1>
+        <p className='text-2xl font-medium text-white'>Time to save the mother earth.</p>
+        <button className="btn btn-primary">Shop Now</button>
+      </div>
       <a href="#slide1" className="btn btn-circle">❯</a>
     </div>
   </div>
