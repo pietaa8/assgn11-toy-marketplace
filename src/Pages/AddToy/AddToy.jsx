@@ -1,10 +1,26 @@
 
 
 const AddToy = () => {
+    const handleAddToy=event=>{
+        event.preventDefault();
+        const form=event.target;
+        const picture=form.picture.value;
+        const name=form.name.value;
+        const sellerName=form.sellerName.value;
+        const sellerEmail=form.sellerEmail.value;
+        const subcategory=form.subcategory.value;
+        const price=form.price.value;
+        const rating=form.rating.value;
+        const quantity=form.quantity.value;
+        const description=form.description.value;
+
+        const newToy={picture,name,sellerName,sellerEmail,subcategory,price,rating,quantity,description}
+        console.log(newToy);
+    }
     return (
         <div>
             <h1 className="text-center text-3xl font-extrabold">Toy Form</h1>
-            <form>
+            <form onSubmit={handleAddToy}>
                 <div className="form-row">
                     <label className="form-label">Picture URL of the toy:</label>
                     <input type="text" id="picture" name="picture" required/>
@@ -15,11 +31,11 @@ const AddToy = () => {
                 </div>
                 <div className="form-row">
                     <label className="form-label">Seller Name:</label>
-                    <input type="text" id="seller-name" name="seller-name"/>
+                    <input type="text" id="seller-name" name="sellerName"/>
                 </div>
                 <div className="form-row">
                     <label className="form-label">Seller Email:</label>
-                    <input type="email" id="seller-email" name="seller-email" required/>
+                    <input type="email" id="seller-email" name="sellerEmail" required/>
                 </div>
                 <div className="form-row">
                     <label className="form-label">Sub-category:</label>
@@ -45,7 +61,9 @@ const AddToy = () => {
                     <label className="form-label">Detail Description:</label>
                     <textarea id="description" name="description" rows="5" required></textarea>
                 </div>
-                             < input type="submit" value="Submit" />
+                <div className="form-row justify-center">
+          <input className="btn btn-primary" type="submit" value="Submit" />
+        </div>
                                 
             </form>
             <style>
@@ -61,6 +79,9 @@ const AddToy = () => {
                       }
                       .form-label {
                         width: 150px;
+                      }
+                      .justify-center {
+                        justify-content: center;
                       }
                     `
                 }

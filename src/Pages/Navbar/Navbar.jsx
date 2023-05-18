@@ -47,7 +47,7 @@ const Navbar = () => {
                 <a>My Toys</a>
               </li>
               <li>
-                <a> <Link to='/addtoy'>Add A Toy</Link> </a>
+                 <Link to='/addtoy'>Add A Toy</Link>
               </li>
             </>
           )}
