@@ -74,7 +74,7 @@ const Signup = () => {
             <label className="label">
                 <span className="label-text">Image</span>
               </label>
-              <input type="image" src="" name="image" placeholder="image" alt="" />
+              <input type="image" src="" name="image" className="input input-bordered"  placeholder="image" alt="" />
 
             </div>
             <div className="form-control mt-6">
