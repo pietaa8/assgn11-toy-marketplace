@@ -1,9 +1,11 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 
 const Signup = () => {
   const { createUser } = useContext(AuthContext);
+
+  const [error,setError]=useState('');
 
   const handleSignUp = (event) => {
     event.preventDefault();
@@ -11,6 +13,17 @@ const Signup = () => {
     const name = form.name.value;
     const email = form.email.value;
     const password = form.password.value;
+
+    if (password.length < 6) {
+        setError('Password must be at least 6 characters long');
+        return;
+      }
+  
+      if (email.trim() === '' || password.trim() === '') {
+        setError('Please fill in all fields');
+        return;
+      }
+
 
     console.log(name, email, password);
 
@@ -52,7 +65,7 @@ const Signup = () => {
               </label>
               <input
                 type="password"
-                name="confirmPassword" // Changed the name to "confirmPassword"
+                name="confirmPassword"
                 placeholder="Confirm Password"
                 className="input input-bordered"
               />
@@ -63,6 +76,7 @@ const Signup = () => {
             <p className="my-4 text-center">
               Already have an account? <Link className="font-bold text-orange-500" to="/login">Log in</Link>{" "}
             </p>
+            <p className="text-red-500">{error}</p>
           </form>
         </div>
       </div>
