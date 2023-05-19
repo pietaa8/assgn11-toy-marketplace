@@ -16,21 +16,24 @@ const UpdateToy = () => {
           description,
         };
       
+       const proceed=window.confirm('Are you sure you want to update?');
+       if(proceed){
         fetch(`http://localhost:5000/toy/${id}`, {
-          method: "PUT",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(updatedToy),
-        })
-          .then((res) => res.json())
-          .then((data) => {
-            console.log(data);
-            if (data.modifiedCount > 0) {
-              alert("Updated Successfully");
-            }
-          });
-      };
+            method: "PUT",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(updatedToy),
+          })
+            .then((res) => res.json())
+            .then((data) => {
+              console.log(data);
+              if (data.modifiedCount > 0) {
+                alert("Updated Successfully");
+              }
+            });
+        }
+       }
       
 
 
