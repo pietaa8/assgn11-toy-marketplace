@@ -7,14 +7,14 @@ const AddToy = () => {
         const picture=form.picture.value;
         const name=form.name.value;
         const sellerName=form.sellerName.value;
-        const sellerEmail=form.sellerEmail.value;
+        const email=form.email.value;
         const subcategory=form.subcategory.value;
         const price=form.price.value;
         const rating=form.rating.value;
         const quantity=form.quantity.value;
         const description=form.description.value;
 
-        const newToy={picture,name,sellerName,sellerEmail,subcategory,price,rating,quantity,description}
+        const newToy={picture,name,sellerName,email,subcategory,price,rating,quantity,description}
         console.log(newToy);
 
         //sending data to the server
@@ -51,7 +51,7 @@ const AddToy = () => {
                 </div>
                 <div className="form-row">
                     <label className="form-label">Seller Email:</label>
-                    <input type="email" id="seller-email" name="sellerEmail" required/>
+                    <input type="email" id="seller-email" name="email" required/>
                 </div>
                 <div className="form-row">
                     <label className="form-label">Sub-category:</label>

@@ -8,9 +8,15 @@ const AllToys = () => {
     const toys=useLoaderData();
     const [search,setSearch]=useState("");
 
-    const filteredToys = toys.filter((toy) =>
-    toy.name.toLowerCase().includes(search.toLowerCase())
-  );
+    let filteredToys = [];
+
+    if (Array.isArray(toys)) {
+      filteredToys = toys.filter((toy) =>
+        toy.name.toLowerCase().includes(search.toLowerCase())
+      );
+    }
+
+  
 
   const handleSearchChange = (event) => {
     setSearch(event.target.value);
@@ -32,7 +38,7 @@ const AllToys = () => {
       </div>
         {
            filteredToys.map(toy=> <AddToyTable
-           key={toys._id}
+           key={toy._id}
            toy={toy}
            >
 

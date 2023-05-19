@@ -1,8 +1,11 @@
 
 
+
 const AddToyTable = ({toy}) => {
 
     const {name,sellerName,subcategory,price,quantity}=toy;
+
+
     return (
         <div className="overflow-x-auto">
   <table className="table table-compact w-full">
@@ -29,6 +32,7 @@ const AddToyTable = ({toy}) => {
       </tbody>
        
   </table>
+ 
 </div>
     );
 };
