@@ -16,6 +16,22 @@ const AddToy = () => {
 
         const newToy={picture,name,sellerName,sellerEmail,subcategory,price,rating,quantity,description}
         console.log(newToy);
+
+        //sending data to the server
+        fetch('http://localhost:5000/toy',{
+            method: 'POST',
+            headers: {
+                'content-type':'application/json'
+            },
+            body: JSON.stringify(newToy)
+        })
+        .then(res=>res.json())
+        .then(data=>{
+            console.log(data);
+            if(data.insertedId){
+                alert('Toy added successfully')
+            }
+        })
     }
     return (
         <div>
@@ -40,9 +56,9 @@ const AddToy = () => {
                 <div className="form-row">
                     <label className="form-label">Sub-category:</label>
                     <select id="subcategory" name="subcategory" required>
-                        <option value="math">Marvel Toys</option>
-                        <option value="language">Star Wars Toys</option>
-                        <option value="science">Transformers Toys</option>
+                        <option value="Marvel">Marvel Toys</option>
+                        <option value="Star Wars">Star Wars Toys</option>
+                        <option value="Transformers">Transformers Toys</option>
                     </select>
                 </div>
                 <div className="form-row">
