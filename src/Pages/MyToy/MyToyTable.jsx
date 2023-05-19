@@ -1,7 +1,10 @@
+import { Link } from "react-router-dom";
 
 
 const MyToyTable = ({toy, handleDelete}) => {
     const {_id,name,sellerName,subcategory,price,quantity,rating,description,picture}=toy;
+
+  
    
     return (
       <tr>
@@ -19,7 +22,13 @@ const MyToyTable = ({toy, handleDelete}) => {
         <td>{quantity}</td> 
         <td>{rating}</td>
         <td>{description}</td>
-        <td><button className="btn btn-primary">Update</button></td> 
+
+<td>
+  <Link to={`/updatetoy/${_id}`} className="btn btn-primary">
+    Update
+  </Link>
+</td>
+
         <td><button className="btn btn-primary" onClick={()=>handleDelete(_id)}>Delete</button></td>
 
 

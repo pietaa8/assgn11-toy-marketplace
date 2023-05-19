@@ -33,6 +33,9 @@ const MyToy = () => {
 
         }
     }
+   
+
+    
 
     return (
         
@@ -59,7 +62,8 @@ const MyToy = () => {
            toys.map(toy=> <MyToyTable
            key={toy._id}
            toy={toy}
-           handleDelete={handleDelete}></MyToyTable>)
+           handleDelete={handleDelete}
+           ></MyToyTable>)
         }
     </tbody>
        
