@@ -1,3 +1,4 @@
+import SectionTwo from "../../SectionTwo/SectionTwo";
 import ShopByCategory from "../../ShopByCategory/ShopByCategory";
 import Gallery from "../Gallery/Gallery";
 import SectionOne from "../Section-one/SectionOne";
@@ -10,6 +11,7 @@ const Home = () => {
             <Banner></Banner>
             <Gallery></Gallery>
             <ShopByCategory></ShopByCategory>
+             <SectionTwo></SectionTwo>
             <SectionOne></SectionOne>
         </div>
     );

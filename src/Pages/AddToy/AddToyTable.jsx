@@ -28,7 +28,7 @@ const AddToyTable = ({toy}) => {
         <td>{price}</td> 
         <td>{quantity}</td> 
         <td><button className="btn btn-primary"> <Link to={`/toy/${_id}`}>View Details</Link>
- </button></td> 
+        </button></td> 
 
       </tr>
       </tbody>

@@ -29,7 +29,7 @@ const ShopByCategory = () => {
     const transformersToys = toys.filter((toy) => toy.subcategory === 'Transformers');
     return (
         <div>
-            <h1 className="text-lg font-extrabold text-center mt-5 mb-5">Shop By Category</h1>
+            <h1 className="text-5xl font-extrabold text-center mt-5 mb-5">Shop By Category</h1>
             <Tabs>
                 <TabList className="tab-list-center">
                     <Tab className="tab-item">Marvel</Tab>
@@ -43,7 +43,7 @@ const ShopByCategory = () => {
                 <div key={toy._id} className="toy-card">
                   <img src={toy.picture} className='toy-image' alt="" />
                   <h3>Toy Name:{toy.name}</h3>
-                  <p>Price:{toy.price}</p>
+                  <p>Price:${toy.price}</p>
                   <p>Rating:{toy.rating}</p>
                   <button className="btn btn-primary"  onClick={()=>handleViewDetails(toy)}>View Details</button>
                 </div>
