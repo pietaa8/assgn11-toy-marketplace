@@ -10,4 +10,20 @@
     border: 1px solid gray;
     border-radius: 5px;
   }
+  .toy-image {
+    height: 600px; /* Adjust the height as per your requirements */
+    width: 500px;
+    object-fit: cover;
+    object-position: center;
+  }
+  .tab-list-center {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  .tab-item {
+    font-size: 18px; /* Adjust the font size as desired */
+  }
+    
   

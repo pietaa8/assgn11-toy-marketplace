@@ -1,15 +1,28 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import './ShopByCategory.css'
+import { useNavigate } from 'react-router-dom';
+import { AuthContext } from '../../Provider/AuthProvider';
 
 const ShopByCategory = () => {
     const [toys, setToys] = useState([]);
+    const {user}=useContext(AuthContext);
+    const navigate=useNavigate();
     useEffect(() => {
         fetch('http://localhost:5000/toy')
             .then(res => res.json())
             .then(data => setToys(data))
     }, [])
+
+    const handleViewDetails = (toy) => {
+        if (!user) {
+            alert('You need to Log in first');
+            navigate('/login');
+        } else {
+            navigate(`/toy/${toy._id}`);
+        }
+    };
 
     const marvelToys = toys.filter((toy) => toy.subcategory === 'Marvel');
     const starWarsToys = toys.filter((toy) => toy.subcategory === 'Star Wars');
@@ -18,45 +31,62 @@ const ShopByCategory = () => {
         <div>
             <h1 className="text-lg font-extrabold text-center mt-5 mb-5">Shop By Category</h1>
             <Tabs>
-                <TabList>
-                    <Tab>Marvel</Tab>
-                    <Tab>Star Wars</Tab>
-                    <Tab>Transformers</Tab>
+                <TabList className="tab-list-center">
+                    <Tab className="tab-item">Marvel</Tab>
+                    <Tab className="tab-item">Star Wars</Tab>
+                    <Tab className="tab-item">Transformers</Tab>
                 </TabList>
                 <TabPanel>
-          <div className="toy-container">
-            {marvelToys.map((toy) => (
-              <div key={toy._id} className="toy-card">
-                <h3>{toy.name}</h3>
-                <p>{toy.description}</p>
-                {/* Render other toy details */}
-              </div>
-            ))}
-          </div>
+          {marvelToys.length >= 2 ? (
+            <div className="toy-container">
+              {marvelToys.map((toy) => (
+                <div key={toy._id} className="toy-card">
+                  <img src={toy.picture} className='toy-image' alt="" />
+                  <h3>Toy Name:{toy.name}</h3>
+                  <p>Price:{toy.price}</p>
+                  <p>Rating:{toy.rating}</p>
+                  <button className="btn btn-primary"  onClick={()=>handleViewDetails(toy)}>View Details</button>
+                </div>
+              ))}
+            </div>
+          ) : (
+            <p>No toys available for Marvel category</p>
+          )}
+        </TabPanel>
+                <TabPanel>
+          {starWarsToys.length >= 2 ? (
+            <div className="toy-container">
+              {starWarsToys.map((toy) => (
+                <div key={toy._id} className="toy-card">
+                  <img src={toy.picture} className='toy-image' alt="" />
+                  <h3>Toy Name:{toy.name}</h3>
+                  <p>Price:{toy.price}</p>
+                  <p>Rating:{toy.rating}</p>
+                  <button className="btn btn-primary"  onClick={() => handleViewDetails(toy)}>View Details</button>
+                </div>
+              ))}
+            </div>
+          ) : (
+            <p>No toys available for Star Wars category</p>
+          )}
         </TabPanel>
 
         <TabPanel>
-          <div className="toy-container">
-            {starWarsToys.map((toy) => (
-              <div key={toy._id} className="toy-card">
-                <h3>{toy.name}</h3>
-                <p>{toy.description}</p>
-                {/* Render other toy details */}
-              </div>
-            ))}
-          </div>
-        </TabPanel>
-
-        <TabPanel>
-          <div className="toy-container">
-            {transformersToys.map((toy) => (
-              <div key={toy._id} className="toy-card">
-                <h3>{toy.name}</h3>
-                <p>{toy.description}</p>
-                {/* Render other toy details */}
-              </div>
-            ))}
-          </div>
+          {transformersToys.length >= 2 ? (
+            <div className="toy-container">
+              {transformersToys.map((toy) => (
+                <div key={toy._id} className="toy-card">
+                  <img src={toy.picture} className='toy-image' alt="" />
+                  <h3>Name:{toy.name}</h3>
+                  <p>Price:{toy.price}</p>
+                  <p>Rating:{toy.rating}</p>
+                  <button className="btn btn-primary"  onClick={() => handleViewDetails(toy)}>View Details</button>
+                </div>
+              ))}
+            </div>
+          ) : (
+            <p>No toys available for Transformers category</p>
+          )}
         </TabPanel>
                
             </Tabs>
