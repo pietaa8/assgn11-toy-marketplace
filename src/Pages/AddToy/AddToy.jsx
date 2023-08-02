@@ -18,7 +18,7 @@ const AddToy = () => {
         console.log(newToy);
 
         //sending data to the server
-        fetch('http://localhost:5000/toy',{
+        fetch('https://assignment-eleven-server-blond.vercel.app/toy',{
             method: 'POST',
             headers: {
                 'content-type':'application/json'
@@ -35,27 +35,27 @@ const AddToy = () => {
     }
     return (
         <div>
-            <h1 className="text-center text-3xl font-extrabold">Toy Form</h1>
+            <h1 className="text-center text-3xl font-extrabold mb-5">Toy Form</h1>
             <form onSubmit={handleAddToy}>
                 <div className="form-row">
                     <label className="form-label">Picture URL of the toy:</label>
-                    <input type="text" id="picture" name="picture" required/>
+                    <input type="text"  name="picture" placeholder="image" className="input input-bordered" required/>
                 </div>
                 <div className="form-row">
                     <label className="form-label">Name:</label>
-                    <input type="text" id="name" name="name" required/>
+                    <input type="text" placeholder="name" className="input input-bordered" name="name" required/>
                 </div>
                 <div className="form-row">
                     <label className="form-label">Seller Name:</label>
-                    <input type="text" id="seller-name" name="sellerName"/>
+                    <input type="text" placeholder="Seller Name" className="input input-bordered" name="sellerName"/>
                 </div>
                 <div className="form-row">
                     <label className="form-label">Seller Email:</label>
-                    <input type="email" id="seller-email" name="email" required/>
+                    <input type="email" placeholder="email" className="input input-bordered" name="email" required/>
                 </div>
                 <div className="form-row">
                     <label className="form-label">Sub-category:</label>
-                    <select id="subcategory" name="subcategory" required>
+                    <select placeholder="sub-category" className="input input-bordered" name="subcategory" required>
                         <option value="Marvel">Marvel Toys</option>
                         <option value="Star Wars">Star Wars Toys</option>
                         <option value="Transformers">Transformers Toys</option>
@@ -63,19 +63,19 @@ const AddToy = () => {
                 </div>
                 <div className="form-row">
                     <label className="form-label">Price:</label>
-                    <input type="number" id="price" name="price" step="0.01" required/>
+                    <input type="number" placeholder="price" className="input input-bordered" name="price" step="0.01" required/>
                 </div>
                 <div className="form-row">
                     <label className="form-label">Rating:</label>
-                    <input type="number" id="rating" name="rating" min="0" max="5" step="0.1" required/>
+                    <input type="number" placeholder="rating" className="input input-bordered" name="rating" min="0" max="5" step="0.1" required/>
                 </div>
                 <div className="form-row">
                     <label className="form-label">Available quantity:</label>
-                    <input type="number" id="quantity" name="quantity" min="0" required/>
+                    <input type="number" placeholder="quantity" className="input input-bordered" name="quantity" min="0" required/>
                 </div>
                 <div className="form-row">
                     <label className="form-label">Detail Description:</label>
-                    <textarea id="description" name="description" rows="5" required></textarea>
+                    <textarea placeholder="description" className="input input-bordered" name="description" rows="5" required></textarea>
                 </div>
                 <div className="form-row justify-center">
           <input className="btn btn-primary" type="submit" value="Submit" />

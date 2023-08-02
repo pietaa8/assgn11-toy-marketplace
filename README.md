@@ -26,8 +26,7 @@ HTML/CSS: Used for structuring and styling the website's user interface.
 
 RESTful API: The client-side communicates with a backend server through RESTful API calls to fetch and update data related to toys and user information.
 
-Live Website:
-You can visit the live ToysStore website here.
+Live Website:https://assignment-eleven-dff48.web.app/
 
 Feel free to explore the website, create an account, add toys, and experience the features of the ToysStore firsthand!
 

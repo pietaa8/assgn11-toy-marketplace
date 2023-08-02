@@ -18,7 +18,7 @@ const UpdateToy = () => {
       
        const proceed=window.confirm('Are you sure you want to update?');
        if(proceed){
-        fetch(`http://localhost:5000/toy/${id}`, {
+        fetch(`https://assignment-eleven-server-blond.vercel.app/toy/${id}`, {
             method: "PUT",
             headers: {
               "Content-Type": "application/json",

@@ -5,7 +5,7 @@ import { AuthContext } from "../../Provider/AuthProvider";
 const Signup = () => {
   const { createUser } = useContext(AuthContext);
 
-  const [error,setError]=useState('');
+  const [error, setError] = useState('');
 
   const handleSignUp = (event) => {
     event.preventDefault();
@@ -13,21 +13,22 @@ const Signup = () => {
     const name = form.name.value;
     const email = form.email.value;
     const password = form.password.value;
+    const imageURL = form.image.value;
 
     if (password.length < 6) {
-        setError('Password must be at least 6 characters long');
-        return;
-      }
-  
-      if (email.trim() === '' || password.trim() === '') {
-        setError('Please fill in all fields');
-        return;
-      }
+      setError('Password must be at least 6 characters long');
+      return;
+    }
+
+    if (email.trim() === '' || password.trim() === '') {
+      setError('Please fill in all fields');
+      return;
+    }
 
 
-    console.log(name, email, password);
+    console.log(name, email, password,imageURL);
 
-    createUser(email, password)
+    createUser(email, password, imageURL)
       .then((result) => {
         const user = result.user;
         console.log(user);
@@ -71,12 +72,12 @@ const Signup = () => {
               />
             </div>
             <div className="form-control">
-            <label className="label">
-                <span className="label-text">Image</span>
+              <label className="label">
+                <span className="label-text">Image URL</span>
               </label>
-              <input type="image" src="" name="image" className="input input-bordered"  placeholder="image" alt="" />
-
+              <input type="text" name="image" className="input input-bordered" placeholder="Image URL" />
             </div>
+
             <div className="form-control mt-6">
               <input className="btn btn-primary" type="submit" value="Signup" />
             </div>

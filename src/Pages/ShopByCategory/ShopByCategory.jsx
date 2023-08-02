@@ -10,7 +10,7 @@ const ShopByCategory = () => {
     const {user}=useContext(AuthContext);
     const navigate=useNavigate();
     useEffect(() => {
-        fetch('http://localhost:5000/toy')
+        fetch('https://assignment-eleven-server-blond.vercel.app/toy')
             .then(res => res.json())
             .then(data => setToys(data))
     }, [])
@@ -42,7 +42,7 @@ const ShopByCategory = () => {
               {marvelToys.map((toy) => (
                 <div key={toy._id} className="toy-card">
                   <img src={toy.picture} className='toy-image' alt="" />
-                  <h3>Toy Name:{toy.name}</h3>
+                  <h3 className=' text-red-400 font-extrabold'>Toy: {toy.name}</h3>
                   <p>Price:${toy.price}</p>
                   <p>Rating:{toy.rating}</p>
                   <button className="btn btn-primary"  onClick={()=>handleViewDetails(toy)}>View Details</button>
@@ -59,7 +59,7 @@ const ShopByCategory = () => {
               {starWarsToys.map((toy) => (
                 <div key={toy._id} className="toy-card">
                   <img src={toy.picture} className='toy-image' alt="" />
-                  <h3>Toy Name:{toy.name}</h3>
+                  <h3 className=' text-red-400 font-extrabold'>Toy: {toy.name}</h3>
                   <p>Price:{toy.price}</p>
                   <p>Rating:{toy.rating}</p>
                   <button className="btn btn-primary"  onClick={() => handleViewDetails(toy)}>View Details</button>
@@ -77,7 +77,7 @@ const ShopByCategory = () => {
               {transformersToys.map((toy) => (
                 <div key={toy._id} className="toy-card">
                   <img src={toy.picture} className='toy-image' alt="" />
-                  <h3>Name:{toy.name}</h3>
+                  <h3 className=' text-red-400 font-extrabold'>Name: {toy.name}</h3>
                   <p>Price:{toy.price}</p>
                   <p>Rating:{toy.rating}</p>
                   <button className="btn btn-primary"  onClick={() => handleViewDetails(toy)}>View Details</button>

@@ -2,7 +2,7 @@ import img from '../../../assets/image/photo-1659652756270-b9f0c1cc0095.jpeg'
 
 const SectionOne = () => {
   return (
-    <div className='mb-5'>
+    <div className=''>
       <h1 className='text-center text-2xl font-serif font-extrabold mt-5'>You Will Love This.</h1>
       <p className='text-center text-base font-medium'>Our Motto Is To Provide Good Toys</p>
       <div className="card lg:card-side bg-base-100 shadow-xl">

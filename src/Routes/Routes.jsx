@@ -43,7 +43,7 @@ const router = createBrowserRouter([
         {
             path:'/alltoy',
             element: <AllToys></AllToys>,
-            loader: ()=> fetch('http://localhost:5000/toy')
+            loader: ()=> fetch('https://assignment-eleven-server-blond.vercel.app/toy')
 
         },
         {
@@ -59,19 +59,16 @@ const router = createBrowserRouter([
         {
             path:'/toy/:toyId',
             element: <PrivateRoute><ToyDetails></ToyDetails></PrivateRoute>,
-            loader:()=>fetch('http://localhost:5000/toy')
-        },
-        {
-            path:'*',
-            element: <Notfound />
+            loader:()=>fetch('https://assignment-eleven-server-blond.vercel.app/toy')
         }
+       
        
       ]
      
     },
     {
         path:'*',
-        element: <Notfound></Notfound>,
+        element: <Notfound/>,
     }
   ]);
 
